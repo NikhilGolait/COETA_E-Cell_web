@@ -5,177 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>COETA E-Cell Team</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0a0b0b 0%, #060518 100%);
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0b0b 0%, #060518 100%);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* NAVIGATION */
+  nav {
+    background: #001220;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .nav-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff512f;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #ff7575;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 1.8em;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* HEADER */
+  h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffc9bf, #e03884);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* TEAM GRID */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 40px 20px;
+  }
+
+  .member-card {
+    background: linear-gradient(135deg, #002233 0%, #001433 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    padding: 24px 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 320px;
+    box-sizing: border-box;
+  }
+
+  .member-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 4, 255, 0.25);
+  }
+
+  .member-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff512f;
+    box-shadow: 0 2px 12px rgba(255, 81, 47, 0.25);
+    margin-bottom: 16px;
+  }
+
+  .member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+
+  .member-position {
+    font-size: 1em;
+    color: #e0e0e0;
+    margin-bottom: 4px;
+  }
+
+  .member-department {
+    font-size: 0.9em;
+    color: #bbbbbb;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #aaa;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  /* MOBILE STYLES */
+  @media (max-width: 600px) {
     nav {
-      background: #001220;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 32px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    .nav-title {
-      font-size: 1.8em;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hamburger {
+      display: block;
+      margin-top: 10px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 20px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      width: 100%;
+      background-color: #001220;
+      padding: 10px 0;
+      border-radius: 8px;
     }
 
     .nav-links a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: #ff512f;
-      bottom: -4px;
-      left: 0;
-      transition: width 0.3s ease-in-out;
-    }
-
-    .nav-links a:hover::after {
+      padding: 10px 20px;
       width: 100%;
-    }
-
-    .nav-links a:hover {
-      color: #ff7575;
+      display: block;
+      text-align: left;
     }
 
     h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, #ffc9bf, #e03884);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2em;
+    }
+  }
+
+  /* DESKTOP ENFORCE */
+  @media (min-width: 601px) {
+    .nav-links {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
     }
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px 20px;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px 40px 20px;
+    .hamburger {
+      display: none !important;
     }
+  }
+</style>
 
-    .member-card {
-        background: linear-gradient(135deg, #002233 0%, #001433 100%);
-        border-radius: 16px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-        padding: 24px 16px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        min-height: 320px; /* ensures vertical space */
-        box-sizing: border-box;
-    }
-
-
-    .member-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(0, 4, 255, 0.25);
-    }
-
-    .member-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #ff512f;
-      box-shadow: 0 2px 12px rgba(255,81,47,0.25);
-      margin-bottom: 16px;
-    }
-
-    .member-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
-    }
-
-    .member-position {
-      font-size: 1em;
-      color: #e0e0e0;
-      margin-bottom: 4px;
-    }
-
-    .member-department {
-      font-size: 0.9em;
-      color: #bbbbbb;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      color: #aaa;
-      font-size: 1em;
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6em;
-      }
-
-      .member-card {
-        padding: 18px 12px;
-        max-height: none;
-      }
-
-      .member-card img {
-        width: 80px;
-        height: 80px;
-      }
-    }
-  </style>
 </head>
 <body>
-    <nav>
+  <nav>
     <div class="nav-title">COETA E-Cell</div>
-    <div class="nav-links">
-      <a href="home.html">Home</a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
       <a href="team.html">Team</a>
       <a href="events.html">Events</a>
     </div>
   </nav>
+
+
   <h1>COETA E-Cell Team Members</h1>
   <div class="team-grid" id="teamGrid"></div>
   <footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
 
   <script>
     const members = [
-      { name: "Sudnyesh Nehare", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=1", position: "President", department: "E-CELL Core" },
+      { name: "Cudnyesh Nehare", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=1", position: "President", department: "E-CELL Core" },
       { name: "Mohammad Tauhid", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=2", position: "Vice President", department: "E-CELL Core" },
       { name: "Mariya Gandhi", photo: "https://via.placeholder.com/100/232526/ffffff?text=3", position: "Secretary & Speaker", department: "E-CELL Core" },
 
@@ -219,5 +271,24 @@
       grid.appendChild(card);
     });
   </script>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    if (window.innerWidth <= 600) {
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  }
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    if (window.innerWidth <= 600) {
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  }
+</script>
+
+
 </body>
 </html>

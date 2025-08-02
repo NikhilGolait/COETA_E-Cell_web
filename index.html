@@ -18,7 +18,7 @@
     }
 
     /* Navbar */
-    nav {
+    nav { 
       background: #001220;
       display: flex;
       justify-content: space-between;
@@ -131,40 +131,63 @@
       letter-spacing: 1px;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  @media (max-width: 600px) {
+      
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
+  .hamburger {
+    display: block;
+    font-size: 1.8em;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 
-      h1 {
-        font-size: 2em;
-      }
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #001220;
+    padding: 10px 0;
+    border-radius: 8px;
+  }
 
-      h2 {
-        font-size: 1.5em;
-      }
+  .nav-links a {
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
 
-      p {
-        font-size: 1em;
-      }
-    }
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-title">COETA E-Cell</div>
-    <div class="nav-links">
-      <a href="#">Home</a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
       <a href="team.html">Team</a>
-      <a href="#">Events</a>
+      <a href="events.html">Events</a>
     </div>
   </nav>
 
@@ -218,6 +241,14 @@
   </section>
 
   <footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    if (window.innerWidth <= 600) {
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  }
+</script>
 
 </body>
 </html>
