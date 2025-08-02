@@ -1,3 +1,15 @@
+<!--                                  EVO DEVELOPERS                                       -->
+
+
+<!-- COETA E-CELL Website -->
+<!-- A Project By EVO DEVELOPERS -->
+
+
+<!-- PLEASE DO NOT MAKE ANY USELESS CHANGES  HERE -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +41,12 @@
       position: sticky;
       top: 0;
       z-index: 999;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
     }
 
     .nav-title {
@@ -189,6 +207,7 @@
       <a href="index.html">Home</a>
       <a href="team.html">Team</a>
       <a href="events.html">Events</a>
+      <a href="gallary.html">Gallary</a>
     </div>
   </nav>
 
@@ -198,6 +217,13 @@
     <a href="team.html" class="btn">Meet the Team</a>
   </header>
 
+  <section class="section">
+    <h2>Our Vision</h2>
+    <p>
+      To make COETA a breeding ground for successful entrepreneurs by creating an inclusive ecosystem that nurtures
+      creativity, leadership, and innovation.
+    </p>
+  </section>
   <section class="section">
     <h2>About COETA</h2>
     <p>
@@ -211,16 +237,8 @@
     <h2>What is E-Cell?</h2>
     <p>
       Entrepreneurship Cell, IIT Bombay is a non-profit student organization that encourages students to develop an entrepreneurial mindset. It supports and guides individuals who want to turn their ideas into startups.
-      The cell organizes E-Summit, one of Asia’s largest entrepreneurship festivals. It includes talks by successful entrepreneurs, startup expos, workshops, and competitions that draw participants from across the country.
-      One of its major initiatives is Eureka!, India’s largest business model competition. It provides mentorship, resources, and funding opportunities to aspiring entrepreneurs.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Our Vision</h2>
-    <p>
-      To make COETA a breeding ground for successful entrepreneurs by creating an inclusive ecosystem that nurtures
-      creativity, leadership, and innovation.
+      The cell organizes E-Summit, one of Asia's largest entrepreneurship festivals. It includes talks by successful entrepreneurs, startup expos, workshops, and competitions that draw participants from across the country.
+      One of its major initiatives is Eureka!, India's largest business model competition. It provides mentorship, resources, and funding opportunities to aspiring entrepreneurs.
     </p>
   </section>
 
@@ -239,7 +257,7 @@
 
   <footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
   <script>
-  function toggleMenu() {
+  function toggleMenu() { 
     const nav = document.getElementById('navLinks');
     if (window.innerWidth <= 600) {
       nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
