@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COETA E-Cell | Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0b0b 0%, #060518 100%);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav {
+      background: #001220;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #ff512f;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: #ff7575;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      background: linear-gradient(90deg, #ffc9bf, #e03884);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin: 50px 0 20px;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-size: 1.1em;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #dd2476, #ff512f);
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 12px 0;
+      color: #aaa;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-title">COETA E-Cell</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="team.html">Team</a>
+      <a href="#">Events</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Welcome to COETA E-Cell</h1>
+    <p>Fueling innovation, igniting startups, and empowering student entrepreneurs at COETA.</p>
+    <a href="team.html" class="btn">Meet the Team</a>
+  </header>
+
+  <section class="section">
+    <h2>About COETA</h2>
+    <p>
+      College of Engineering and Technology, Akola (COETA) is a renowned institution nurturing thousands of
+      engineering minds with a commitment to excellence, innovation, and holistic development. We encourage not only
+      academics but also innovation through various student-led activities.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What is E-Cell?</h2>
+    <p>
+      The Entrepreneurship Cell (E-Cell) at COETA is a student-driven initiative focused on cultivating a startup
+      ecosystem, providing mentorship, organizing events, and connecting budding entrepreneurs to industry leaders,
+      incubators, and investors.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Our Vision</h2>
+    <p>
+      To make COETA a breeding ground for successful entrepreneurs by creating an inclusive ecosystem that nurtures
+      creativity, leadership, and innovation.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Our Initiatives</h2>
+    <p>
+      From ideation to execution — our workshops, pitch competitions, hackathons, startup expos, and speaker sessions
+      are designed to support entrepreneurial journeys.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Join Us</h2>
+    <p>
+      Be part of the COETA E-Cell family. Whether you're an innovator, techie, leader, or someone driven by ideas —
+      we welcome you to contribute to our growing community.
+    </p>
+    <a href="#contact" class="btn">Get Involved</a>
+  </section>
+
+  <footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
+
+</body>
+</html>

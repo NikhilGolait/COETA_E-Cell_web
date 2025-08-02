@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COETA E-Cell Team</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0b0b 0%, #060518 100%);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background: #001220;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #ff512f;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: #ff7575;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ffc9bf, #e03884);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
+    }
+
+    .member-card {
+        background: linear-gradient(135deg, #002233 0%, #001433 100%);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+        padding: 24px 16px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 320px; /* ensures vertical space */
+        box-sizing: border-box;
+    }
+
+
+    .member-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 4, 255, 0.25);
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ff512f;
+      box-shadow: 0 2px 12px rgba(255,81,47,0.25);
+      margin-bottom: 16px;
+    }
+
+    .member-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .member-position {
+      font-size: 1em;
+      color: #e0e0e0;
+      margin-bottom: 4px;
+    }
+
+    .member-department {
+      font-size: 0.9em;
+      color: #bbbbbb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #aaa;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .member-card {
+        padding: 18px 12px;
+        max-height: none;
+      }
+
+      .member-card img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-title">COETA E-Cell</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="events.html">Events</a>
+    </div>
+  </nav>
+  <h1>COETA E-Cell Team Members</h1>
+  <div class="team-grid" id="teamGrid"></div>
+  <footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
+
+  <script>
+    const members = [
+      { name: "Sudnyesh Nehare", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=1", position: "President", department: "E-CELL Core" },
+      { name: "Mohammad Tauhid", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=2", position: "Vice President", department: "E-CELL Core" },
+      { name: "Mariya Gandhi", photo: "https://via.placeholder.com/100/232526/ffffff?text=3", position: "Secretary & Speaker", department: "E-CELL Core" },
+
+      { name: "Nikhil Rajesh Golait", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=4", position: "Tech Team Head", department: "Tech" },
+      { name: "Dishant Akhare", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=11", position: "Media Team Head", department: "Media" },
+      { name: "Jai Shrikant Satarkar", photo: "https://via.placeholder.com/100/232526/ffffff?text=18", position: "Event Team Head", department: "Event" },
+      { name: "Ajinkya Sudhakar Doifode", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=23", position: "Finance Team Head", department: "Finance" },
+      { name: "Nitesh Prahlad Wankhade", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=5", position: "Member", department: "Tech" },
+      { name: "Ishwari Satish Mahalle", photo: "https://via.placeholder.com/100/232526/ffffff?text=6", position: "Member", department: "Tech" },
+      { name: "Aaradhana Sharad Thakre", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=7", position: "Member", department: "Tech" },
+      { name: "Ayush Shrivas", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=8", position: "Member", department: "Tech" },
+      { name: "Disha Sandeep Lahoti", photo: "https://via.placeholder.com/100/232526/ffffff?text=9", position: "Member", department: "Tech" },
+      { name: "Aryan Bhad", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=10", position: "Member", department: "Tech" },
+
+      { name: "Vrushabh Arakhrao", photo: "https://via.placeholder.com/100/232526/ffffff?text=12", position: "Member", department: "Media" },
+      { name: "Nakul Mahulikar", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=13", position: "Member", department: "Media" },
+      { name: "Dayyan Azeem Khan", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=14", position: "Member", department: "Media" },
+      { name: "Tanmay Anil Jagtap", photo: "https://via.placeholder.com/100/232526/ffffff?text=15", position: "Member", department: "Media" },
+      { name: "Dhanashri Rupesh Kachkure", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=16", position: "Member", department: "Media" },
+      { name: "Shreya Manish Sharma", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=17", position: "Member", department: "Media" },
+
+      { name: "Kashi Nilesh Dheva", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=19", position: "Member", department: "Event" },
+      { name: "Kalyani Sudhakarrao Bawane", photo: "https://via.placeholder.com/100/dd2476/ffffff?text=20", position: "Member", department: "Event" },
+      { name: "Rajdeep Kadu", photo: "https://via.placeholder.com/100/232526/ffffff?text=21", position: "Member", department: "Event" },
+      { name: "Yash Vijay Tayade", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=22", position: "Member", department: "Event" },
+
+      { name: "Mohit S Raut", photo: "https://via.placeholder.com/100/232526/ffffff?text=24", position: "Member", department: "Finance" },
+      { name: "Sanskar Vivek Gawande", photo: "https://via.placeholder.com/100/ff512f/ffffff?text=25", position: "Member", department: "Finance" }
+    ];
+
+    const grid = document.getElementById('teamGrid');
+    members.forEach(member => {
+      const card = document.createElement('div');
+      card.className = 'member-card';
+      card.innerHTML = `
+        <img src="${member.photo}" alt="${member.name}" loading="lazy">
+        <div class="member-name">${member.name}</div>
+        <div class="member-position">${member.position}</div>
+        <div class="member-department">${member.department}</div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
