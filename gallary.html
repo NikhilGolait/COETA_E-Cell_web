@@ -78,17 +78,19 @@
     }
 
     .gallery-grid {
-      display: grid;
+      display: block;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
       padding: 0 20px 60px 20px;
-      max-width: 1200px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
     .gallery-card {
+      margin-top: 20px;
       background: linear-gradient(135deg, #002233 0%, #001433 100%);
       border-radius: 16px;
+      display: block;
       overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -101,9 +103,10 @@
 
     .gallery-card img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       display: block;
+      object-position: center
     }
 
     footer {
@@ -123,19 +126,24 @@
       }
 
       nav {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
       }
 
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-        background-color: #001220;
-        border-radius: 8px;
-        padding: 10px 0;
-      }
+    .nav-links {
+      display: none; 
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px; 
+      right: 16px;
+      width: 200px;
+      background-color: #001220;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: -2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
 
       .nav-links a {
         padding: 10px 20px;
@@ -154,6 +162,23 @@
         display: flex !important;
       }
     }
+
+footer{
+  border-top: 2px solid #9e0047;
+  background: #000;
+  color: #fff;
+  padding-top: 10px;
+  position: inherit;
+  text-align: center;
+}
+    h6 {
+      font-size: 0.5em;
+      background: linear-gradient(90deg, #ca00f3, #de0004, rgb(129, 129, 240));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 <body>
@@ -170,18 +195,22 @@
 </nav>
 
 <h1>Gallery</h1>
-{% comment %} you can add more images here {% endcomment %}
+
 <div class="gallery-grid">
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/ff512f/ffffff?text=Event+1" alt="Event 1"></div>
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/dd2476/ffffff?text=Workshop+2" alt="Workshop 2"></div>
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/232526/ffffff?text=Seminar+3" alt="Seminar 3"></div>
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/ff512f/ffffff?text=Hackathon+4" alt="Hackathon 4"></div>
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/dd2476/ffffff?text=Pitch+5" alt="Pitch 5"></div>
-  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/232526/ffffff?text=Meetup+6" alt="Meetup 6"></div>
+  <div class="gallery-card"><img src="Gallary/img1.png" alt="Event 1"></div>
+  <div class="gallery-card"><img src="Gallary/img2.jpg" alt="Workshop 2"></div>
+  <div class="gallery-card"><img src="Gallary/img3.jpg" alt="Seminar 3"></div>
+  <div class="gallery-card"><img src="Gallary/img4.jpg" alt="Hackathon 4"></div>
+  <!-- <div class="gallery-card"><img src="https://via.placeholder.com/400x250/dd2476/ffffff?text=Pitch+5" alt="Pitch 5"></div>
+  <div class="gallery-card"><img src="https://via.placeholder.com/400x250/232526/ffffff?text=Meetup+6" alt="Meetup 6"></div> -->
 </div>
 
-<footer>&copy; 2025 COETA E-Cell. All rights reserved.</footer>
-{% comment %} do not change the code  {% endcomment %}
+ <footer>
+
+    &copy; 2025 COETA E-Cell. All rights reserved.
+    <h6>Website Developed by Nikhil R. Golait</h6>
+  </footer>
+
 <script>
   function toggleMenu() {
     const nav = document.getElementById('navLinks');
