@@ -1,0 +1,2 @@
+Instructions 
+use the same styling properties for all the pages.
