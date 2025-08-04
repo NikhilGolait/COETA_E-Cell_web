@@ -315,13 +315,26 @@ footer{
   }
 </script> -->
 <script>
-  function toggleMenu() {
+  function toggleMenu() { 
     const nav = document.getElementById('navLinks');
     if (window.innerWidth <= 600) {
-      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     }
   }
+
+  
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.querySelector('.hamburger');
+    if (window.innerWidth <= 600 && nav.style.display === 'flex') {
+      
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.style.display = 'none';
+      }
+    }
+  });
 </script>
+
 
 
 </body>
